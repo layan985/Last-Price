@@ -10,19 +10,19 @@ readme = "README.md"
 requires-python = ">=3.11"
 authors = [{name = "Layan Oraidi"}]
 dependencies = [
-  "numpy>=1.26",
-  "pandas>=2.1",
-  "scikit-learn>=1.4",
-  "scipy>=1.11",
-  "joblib>=1.3",
-  "fastapi>=0.110",
-  "pydantic>=2.6",
-  "uvicorn>=0.27",
-  "Pillow>=10.0"
+  "numpy==2.3.5",
+  "pandas==2.2.3",
+  "scikit-learn==1.8.0",
+  "scipy==1.17.0",
+  "joblib==1.5.3",
+  "fastapi==0.128.2",
+  "pydantic==2.13.4",
+  "uvicorn==0.48.0",
+  "Pillow==12.3.0"
 ]
 
 [project.optional-dependencies]
-dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.5", "mypy>=1.10"]
+dev = ["pytest==9.0.2", "httpx==0.28.1", "ruff==0.16.2", "mypy==2.3.0"]
 mlops = ["mlflow>=2.12", "evidently>=0.4"]
 sql = ["duckdb>=1.0"]
 voice = ["openai-whisper>=20231117"]
