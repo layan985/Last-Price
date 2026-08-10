@@ -1,0 +1,36 @@
+{
+  "examples": [
+    {
+      "transcript": "Show me inventory in Amman",
+      "intent": "inventory_query",
+      "sql": "SELECT city, AVG(inventory_level) AS avg_inventory, AVG(stockout_risk) AS avg_stockout_risk FROM negotiations WHERE city = ? GROUP BY city ORDER BY avg_inventory ASC",
+      "params": [
+        "Amman"
+      ]
+    },
+    {
+      "transcript": "What is the conversion rate in Dubai?",
+      "intent": "conversion_query",
+      "sql": "SELECT buyer_model, AVG(agreed) AS agreement_rate FROM negotiations WHERE city = ? GROUP BY buyer_model ORDER BY agreement_rate DESC",
+      "params": [
+        "Dubai"
+      ]
+    },
+    {
+      "transcript": "Compare pricing in Budapest",
+      "intent": "pricing_query",
+      "sql": "SELECT buyer_model, AVG(price) AS mean_price FROM negotiations WHERE city = ? AND price IS NOT NULL GROUP BY buyer_model ORDER BY mean_price ASC",
+      "params": [
+        "Budapest"
+      ]
+    },
+    {
+      "transcript": "Show buyer savings in Riyadh",
+      "intent": "savings_query",
+      "sql": "SELECT buyer_model, AVG(buyer_surplus) AS mean_buyer_surplus FROM negotiations WHERE city = ? GROUP BY buyer_model ORDER BY mean_buyer_surplus DESC",
+      "params": [
+        "Riyadh"
+      ]
+    }
+  ]
+}

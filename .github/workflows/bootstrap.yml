@@ -1,11 +1,10 @@
-name: ci
+name: manual-production-verification
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

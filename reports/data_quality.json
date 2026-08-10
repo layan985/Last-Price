@@ -1,0 +1,13 @@
+{
+  "rows": 3000,
+  "scenarios": 500,
+  "missing_required_features": 0,
+  "duplicate_treatment_ids": 0,
+  "completed_without_price": 0,
+  "failed_with_price": 0,
+  "price_below_seller_cost": 0,
+  "price_above_buyer_value": 0,
+  "invalid_rounds": 0,
+  "scenario_context_inconsistencies": 0,
+  "passed": true
+}

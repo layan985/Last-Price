@@ -1,0 +1,44 @@
+{
+  "run_id": "run-280186a8b987",
+  "created_at": "2026-08-10T10:49:02.538589+00:00",
+  "dataset_sha256": "a96648049ecee9265719429d094ee78cc4d59bfeaa1d934da80e86b4abb2edf4",
+  "git_commit": null,
+  "metrics": {
+    "split": {
+      "cutoff": "2026-01-11 11:00:00",
+      "train_rows": 2250,
+      "test_rows": 750,
+      "train_scenarios": 375,
+      "test_scenarios": 125,
+      "scenario_overlap": 0
+    },
+    "agreement": {
+      "baseline": {
+        "accuracy": 0.736,
+        "f1": 0.847926267281106,
+        "brier": 0.195904,
+        "roc_auc": 0.5
+      },
+      "random_forest": {
+        "accuracy": 0.7826666666666666,
+        "f1": 0.8505957836846929,
+        "brier": 0.16374282688543876,
+        "roc_auc": 0.7890590689503733
+      }
+    },
+    "price": {
+      "baseline": {
+        "mae": 23.71892140764125,
+        "rmse": 28.79157643147989,
+        "r2": -0.012422762310948299
+      },
+      "random_forest": {
+        "mae": 2.5405428064642526,
+        "rmse": 3.332165949235413,
+        "r2": 0.9864392329399339
+      },
+      "n_train_completed": 1746,
+      "n_test_completed": 552
+    }
+  }
+}

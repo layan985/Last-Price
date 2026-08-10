@@ -1,0 +1,40 @@
+{
+  "inference_features": [
+    "buyer_model",
+    "seller_model",
+    "market_segment",
+    "city",
+    "season",
+    "product_id",
+    "shock_flag",
+    "cost_shock_pct",
+    "buyer_value",
+    "base_seller_cost",
+    "seller_cost",
+    "reference_price",
+    "gains_from_trade",
+    "reference_markup_over_cost",
+    "value_premium_over_reference",
+    "inventory_level",
+    "inventory_velocity",
+    "stockout_risk",
+    "competitor_price",
+    "hour",
+    "day_of_week",
+    "month"
+  ],
+  "blacklisted_post_outcome_fields": [
+    "agreed",
+    "price",
+    "rounds",
+    "buyer_surplus",
+    "seller_surplus",
+    "total_surplus",
+    "buyer_capture_rate",
+    "seller_capture_rate",
+    "price_vs_reference_pct"
+  ],
+  "blacklisted_fields_present_in_training_features": [],
+  "missing_inference_features": [],
+  "passed": true
+}
