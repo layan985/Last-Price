@@ -6,7 +6,6 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageFilter
 
-
 KEYWORDS = {
     "electronics": ["phone", "laptop", "camera", "charger", "headphones"],
     "fashion": ["shoe", "shirt", "jacket", "dress", "bag"],

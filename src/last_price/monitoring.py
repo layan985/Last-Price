@@ -1,8 +1,5 @@
 from __future__ import annotations
 
-import math
-from typing import Iterable
-
 import numpy as np
 import pandas as pd
 from scipy.spatial.distance import jensenshannon

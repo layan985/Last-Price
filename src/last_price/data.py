@@ -263,7 +263,7 @@ def data_quality_report(df: pd.DataFrame) -> dict:
         scenario_feature_inconsistency += int((df.groupby("scenario_id")[col].nunique(dropna=False) > 1).sum())
 
     checks = {
-        "rows": int(len(df)),
+        "rows": len(df),
         "scenarios": int(df["scenario_id"].nunique()),
         "missing_required_features": int(df[INFERENCE_FEATURES].isna().sum().sum()),
         "duplicate_treatment_ids": duplicate_treatment,

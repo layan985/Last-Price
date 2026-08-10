@@ -154,13 +154,11 @@ def train_models(df: pd.DataFrame, model_dir: Path = MODEL_DIR) -> dict[str, Any
     metrics = {
         "split": {
             "cutoff": str(split.cutoff),
-            "train_rows": int(len(split.train)),
-            "test_rows": int(len(split.test)),
+            "train_rows": len(split.train),
+            "test_rows": len(split.test),
             "train_scenarios": int(split.train["scenario_id"].nunique()),
             "test_scenarios": int(split.test["scenario_id"].nunique()),
-            "scenario_overlap": int(
-                len(set(split.train["scenario_id"]).intersection(set(split.test["scenario_id"])))
-            ),
+            "scenario_overlap": len(set(split.train["scenario_id"]).intersection(set(split.test["scenario_id"]))),
         },
         "agreement": {
             "baseline": _classification_metrics(y_test, base_prob, base_pred),
@@ -169,8 +167,8 @@ def train_models(df: pd.DataFrame, model_dir: Path = MODEL_DIR) -> dict[str, Any
         "price": {
             "baseline": _regression_metrics(yp_test, price_base_pred),
             "random_forest": _regression_metrics(yp_test, price_pred),
-            "n_train_completed": int(len(price_train)),
-            "n_test_completed": int(len(price_test)),
+            "n_train_completed": len(price_train),
+            "n_test_completed": len(price_test),
         },
     }
 

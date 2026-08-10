@@ -2,15 +2,14 @@ from __future__ import annotations
 
 import json
 import sqlite3
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 from last_price.config import MONITOR_DIR, PROJECT_ROOT, REPORT_DIR, SQLITE_DB
 from last_price.data import (
@@ -110,10 +109,10 @@ def multimodal_smoke_benchmark():
     pred = model.predict(test[feature_cols])
     return {
         "task": "synthetic product-category multimodal smoke benchmark",
-        "rows": int(len(frame)),
-        "held_out_rows": int(len(test)),
+        "rows": len(frame),
+        "held_out_rows": len(test),
         "accuracy": float(accuracy_score(test["label"], pred)),
-        "feature_count": int(len(feature_cols)),
+        "feature_count": len(feature_cols),
         "note": "Synthetic images/text only; proves a fusion pipeline, not real-world vision performance.",
     }
 

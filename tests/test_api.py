@@ -1,4 +1,3 @@
-import pandas as pd
 
 from last_price.api import health
 

@@ -1,4 +1,3 @@
-import pandas as pd
 
 from last_price.data import build_processed, data_quality_report, leakage_audit
 

@@ -1,11 +1,10 @@
 from __future__ import annotations
 
 import json
-import os
 import sqlite3
 import subprocess
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 from .config import SQLITE_DB
@@ -22,7 +21,7 @@ def git_commit() -> str | None:
 
 def register_run(dataset_sha256: str, metrics: dict, db_path: Path = SQLITE_DB) -> dict:
     run_id = f"run-{uuid.uuid4().hex[:12]}"
-    created_at = datetime.now(timezone.utc).isoformat()
+    created_at = datetime.now(UTC).isoformat()
     commit = git_commit()
     payload = {
         "run_id": run_id,

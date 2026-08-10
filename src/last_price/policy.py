@@ -3,7 +3,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 import numpy as np
-import pandas as pd
 
 from .config import INFERENCE_FEATURES
 
@@ -48,7 +47,7 @@ def evaluate_policy(test, agreement_model, price_model, round_means, baseline_bu
     def summarize(frame):
         completed = frame[frame["agreed"] == 1]
         return {
-            "rows": int(len(frame)),
+            "rows": len(frame),
             "agreement_rate": float(frame["agreed"].mean()),
             "mean_price_if_agreed": float(completed["price"].mean()) if len(completed) else None,
             "mean_buyer_surplus": float(frame["buyer_surplus"].mean()),
