@@ -13,7 +13,16 @@ class PolicyWeights:
     round_cost: float = 0.35
 
 
-def score_candidates(candidates, agreement_model, price_model, round_means, weights=PolicyWeights()):
+def score_candidates(
+    candidates,
+    agreement_model,
+    price_model,
+    round_means,
+    weights: PolicyWeights | None = None,
+):
+    if weights is None:
+        weights = PolicyWeights()
+
     frame = candidates.copy()
     p_agree = agreement_model.predict_proba(frame[INFERENCE_FEATURES])[:, 1]
     pred_price = price_model.predict(frame[INFERENCE_FEATURES])
