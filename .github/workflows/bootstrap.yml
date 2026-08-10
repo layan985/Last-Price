@@ -19,7 +19,7 @@ jobs:
         run: python bootstrap_repo.py
       - name: Replace bootstrap payload with project
         run: |
-          rm -f bootstrap_repo.py
+          rm -f bootstrap_repo.py .github/workflows/ci.yml
           rm -rf .bootstrap
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
