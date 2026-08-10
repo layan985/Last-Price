@@ -6,6 +6,8 @@ The useful part is not a giant model score. It is the full path from raw negotia
 
 > **Scope:** the shipped data are synthetic mechanical-policy negotiations. Results are not evidence about real commercial LLMs or a live marketplace.
 
+**Short review path:** [five-minute hiring-manager guide](HIRING_MANAGER_GUIDE.md) · [CV bullets](CV_BULLETS.md) · [stakeholder memo](STAKEHOLDER_MEMO.md) · [technical report](TECHNICAL_REPORT.md)
+
 ## What is here
 
 - deterministic generator for 3,000 negotiations across 500 related economic scenarios
@@ -153,7 +155,6 @@ image statistics + text signals + price + inventory
 ```
 
 and classifies synthetic listing categories. It exists to exercise a multimodal feature contract and test path. It is deliberately not presented as real-world computer-vision accuracy.
-
 
 ## Current held-out results
 
