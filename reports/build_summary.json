@@ -1,0 +1,84 @@
+{
+  "dataset_sha256": "a96648049ecee9265719429d094ee78cc4d59bfeaa1d934da80e86b4abb2edf4",
+  "quality_passed": true,
+  "leakage_audit_passed": true,
+  "metrics": {
+    "split": {
+      "cutoff": "2026-01-11 11:00:00",
+      "train_rows": 2250,
+      "test_rows": 750,
+      "train_scenarios": 375,
+      "test_scenarios": 125,
+      "scenario_overlap": 0
+    },
+    "agreement": {
+      "baseline": {
+        "accuracy": 0.736,
+        "f1": 0.847926267281106,
+        "brier": 0.195904,
+        "roc_auc": 0.5
+      },
+      "random_forest": {
+        "accuracy": 0.7826666666666666,
+        "f1": 0.8505957836846929,
+        "brier": 0.16374282688543876,
+        "roc_auc": 0.7890590689503733
+      }
+    },
+    "price": {
+      "baseline": {
+        "mae": 23.71892140764125,
+        "rmse": 28.79157643147989,
+        "r2": -0.012422762310948299
+      },
+      "random_forest": {
+        "mae": 2.5405428064642526,
+        "rmse": 3.332165949235413,
+        "r2": 0.9864392329399339
+      },
+      "n_train_completed": 1746,
+      "n_test_completed": 552
+    }
+  },
+  "policy": {
+    "baseline_policy": "buyer_B",
+    "recommended": {
+      "rows": 250,
+      "agreement_rate": 0.692,
+      "mean_price_if_agreed": 100.5162214709492,
+      "mean_buyer_surplus": 15.02136815279214,
+      "mean_rounds": 6.408,
+      "composite_realized_utility": 10.314568152792141
+    },
+    "baseline": {
+      "rows": 250,
+      "agreement_rate": 0.776,
+      "mean_price_if_agreed": 102.57737106296776,
+      "mean_buyer_surplus": 12.926591325993048,
+      "mean_rounds": 5.9,
+      "composite_realized_utility": 9.069591325993049
+    },
+    "absolute_uplift": {
+      "agreement_rate": -0.08400000000000007,
+      "mean_price_if_agreed": -2.061149592018552,
+      "mean_buyer_surplus": 2.0947768267990927,
+      "mean_rounds": 0.508,
+      "composite_realized_utility": 1.2449768267990926
+    },
+    "selection_share": {
+      "buyer_A": 0.6,
+      "buyer_B": 0.164,
+      "buyer_C": 0.236
+    }
+  },
+  "drift_status": "alert",
+  "drift_alert_count": 8,
+  "multimodal": {
+    "task": "synthetic product-category multimodal smoke benchmark",
+    "rows": 90,
+    "held_out_rows": 22,
+    "accuracy": 1.0,
+    "feature_count": 13,
+    "note": "Synthetic images/text only; proves a fusion pipeline, not real-world vision performance."
+  }
+}

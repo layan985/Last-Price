@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "last-price"
+version = "0.2.0"
+description = "Production-style marketplace ML system built around the Last Price bargaining experiment."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "Layan Oraidi"}]
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "scikit-learn>=1.4",
+  "scipy>=1.11",
+  "joblib>=1.3",
+  "fastapi>=0.110",
+  "pydantic>=2.6",
+  "uvicorn>=0.27",
+  "Pillow>=10.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.5", "mypy>=1.10"]
+mlops = ["mlflow>=2.12", "evidently>=0.4"]
+sql = ["duckdb>=1.0"]
+voice = ["openai-whisper>=20231117"]
+
+[project.scripts]
+last-price = "last_price.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

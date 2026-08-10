@@ -1,0 +1,8 @@
+{
+  "task": "synthetic product-category multimodal smoke benchmark",
+  "rows": 90,
+  "held_out_rows": 22,
+  "accuracy": 1.0,
+  "feature_count": 13,
+  "note": "Synthetic images/text only; proves a fusion pipeline, not real-world vision performance."
+}

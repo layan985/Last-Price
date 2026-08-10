@@ -1,0 +1,72 @@
+{
+  "numeric_psi": {
+    "shock_flag": 0.0,
+    "cost_shock_pct": 0.022362338218237167,
+    "buyer_value": 0.13923352933502342,
+    "base_seller_cost": 0.044309343402884234,
+    "seller_cost": 0.04582916282399305,
+    "reference_price": 0.10725203194349507,
+    "gains_from_trade": 0.10401239286316373,
+    "reference_markup_over_cost": 0.2033835228709819,
+    "value_premium_over_reference": 0.0818133667075209,
+    "inventory_level": 8.976633233559323,
+    "inventory_velocity": 0.09250797081848786,
+    "stockout_risk": 3.190187746212787,
+    "competitor_price": 0.3584587082907208,
+    "hour": 0.05970315506664858,
+    "day_of_week": 0.00020032329235485338,
+    "month": 7.207591178225638
+  },
+  "categorical_js": {
+    "buyer_model": 0.0,
+    "seller_model": 0.0,
+    "market_segment": 0.003631671595566102,
+    "city": 0.2079262149949534,
+    "season": 0.31005381167097096,
+    "product_id": 0.012920517461615509
+  },
+  "prediction_psi": 0.8736393280618358,
+  "alerts": [
+    {
+      "feature": "reference_markup_over_cost",
+      "type": "numeric_psi",
+      "value": 0.2033835228709819
+    },
+    {
+      "feature": "inventory_level",
+      "type": "numeric_psi",
+      "value": 8.976633233559323
+    },
+    {
+      "feature": "stockout_risk",
+      "type": "numeric_psi",
+      "value": 3.190187746212787
+    },
+    {
+      "feature": "competitor_price",
+      "type": "numeric_psi",
+      "value": 0.3584587082907208
+    },
+    {
+      "feature": "month",
+      "type": "numeric_psi",
+      "value": 7.207591178225638
+    },
+    {
+      "feature": "city",
+      "type": "categorical_js",
+      "value": 0.2079262149949534
+    },
+    {
+      "feature": "season",
+      "type": "categorical_js",
+      "value": 0.31005381167097096
+    },
+    {
+      "feature": "agreement_prediction",
+      "type": "prediction_psi",
+      "value": 0.8736393280618358
+    }
+  ],
+  "status": "alert"
+}
