@@ -1,0 +1,39 @@
+name: build-portfolio-preview
+
+on:
+  push:
+    branches: [portfolio-live-staging]
+    paths:
+      - tools/build_portfolio_preview.py
+      - .github/workflows/build-portfolio-preview.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: portfolio-live-staging
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build portfolio HTML from current production page
+        run: python tools/build_portfolio_preview.py
+      - name: Verify Last Price and canonical domain
+        run: |
+          grep -q 'Last Price.' portfolio-live-preview.html
+          grep -q 'https://layanaloreidi.online/' portfolio-live-preview.html
+          grep -q '0.789' portfolio-live-preview.html
+          grep -q 'REPRODUCE IT' portfolio-live-preview.html
+      - name: Commit generated preview
+        run: |
+          git config user.name 'layan aloreidi'
+          git config user.email 'layanoraidi@gmail.com'
+          git add portfolio-live-preview.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Generate updated portfolio preview'
+          git push origin HEAD:portfolio-live-staging
