@@ -26,6 +26,7 @@ dev = ["pytest==9.0.2", "httpx==0.28.1", "ruff==0.16.2", "mypy==2.3.0"]
 mlops = ["mlflow>=2.12", "evidently>=0.4"]
 sql = ["duckdb>=1.0"]
 voice = ["openai-whisper>=20231117"]
+glee = ["glee-sdk"]
 
 [project.scripts]
 last-price = "last_price.cli:main"
